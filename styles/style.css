@@ -1,0 +1,215 @@
+/* General Resets */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F5F7FA;
+    color: #333;
+}
+
+/* Header styling to match other pages */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e5d788e6;
+    /* Gold */
+    padding: 10px 20px;
+    /* Space around header */
+}
+
+header h1 {
+    color: #333;
+    /* Dark text color for readability */
+    margin: 0;
+    /* Remove default margin */
+    font-size: 24px;
+    /* Adjust font size if necessary */
+}
+
+
+.logo {
+    width: 100px;
+    /* Adjust the width to your desired size */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.category-filter {
+    display: flex;
+    justify-content: center;
+    background-color: #e5d788e6;
+    /* Gold */
+    padding: 10px 0;
+}
+
+.category-filter button {
+    margin: 0 10px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #137913e6;
+    /* Green */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.business-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.business-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.business-card:hover {
+    transform: scale(1.05);
+}
+
+.business-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.business-card h3 {
+    margin: 10px;
+}
+
+.business-card p {
+    margin: 0 10px 10px;
+}
+
+.view-profile {
+    background-color: #137913e6;
+    /* Green */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#mapViewBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #e5d788e6;
+    /* Gold */
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style for the business profile */
+/* Existing styles remain the same */
+
+/* Style for the business profile */
+#businessProfile {
+    padding: 20px;
+    /* Adjust the padding as needed */
+    margin: 20px auto;
+    /* Center the profile and add margin on top and bottom */
+    max-width: 600px;
+    /* Set a maximum width for better readability */
+    background-color: #ffffff;
+    /* Changed to white for better contrast */
+    border-radius: 10px;
+    /* Optional: Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Slightly stronger shadow for depth */
+    text-align: center;
+    /* Center text for better layout */
+}
+
+/* Image styles */
+#businessProfile img {
+    max-width: 100%;
+    /* Make sure the image is responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 10px;
+    /* Optional: Rounded corners for the image */
+    margin-bottom: 15px;
+    /* Space below the image */
+}
+
+/* Additional styling for headings and paragraphs */
+#businessProfile h2 {
+    margin-top: 0;
+    /* Remove margin at the top of the heading */
+    font-size: 1.8em;
+    /* Increase font size for prominence */
+    color: #333;
+    /* Dark color for better readability */
+}
+
+#businessProfile p {
+    margin-bottom: 15px;
+    /* Add spacing between paragraphs */
+    line-height: 1.6;
+    /* Better line height for readability */
+    color: #555;
+    /* Slightly lighter grey for paragraph text */
+}
+
+/* Map Styling */
+#map {
+    height: 300px;
+    /* Set the height of the map */
+    width: 100%;
+    /* Full width */
+    margin: 20px auto;
+    /* Center the map */
+    border-radius: 10px;
+    /* Rounded corners for the map */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e5d788e6;
+    /* Gold */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    #businessProfile {
+        padding: 15px;
+        /* Reduce padding on smaller screens */
+    }
+
+    #map {
+        height: 250px;
+        /* Adjust map height for smaller screens */
+    }
+}

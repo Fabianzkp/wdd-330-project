@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Sunny Restaurant",
+        "address": "9 Ikeja Street, Lagos",
+        "image": "images/restaurants.webp",
+        "details": "Sunny's Restaurant offers a wide variety of local dishes, including jollof rice and pounded yam.",
+        "phone": "08012345678",
+        "latitude": 6.601714162498947,
+        "longitude": 3.3514697880351885
+    },
+    {
+        "name": "Josephine Fashion Shop",
+        "address": "17 IBB Way, Calabar",
+        "image": "images/shops.webp",
+        "details": "Josephine Fashion Shop specializes in traditional African attire and modern fashion.",
+        "phone": "07098765432",
+        "latitude": 5.009573353447406,
+        "longitude": 8.329721678918265
+    },
+    {
+        "name": "Ibe Services",
+        "address": "56 Parliamentary Road, Calabar",
+        "image": "images/services.webp",
+        "details": "Ibe's Services provides top-notch plumbing and electrical services in the Calabar area.",
+        "phone": "08123456789",
+        "latitude": 5.006214687014033,
+        "longitude": 8.346614231621645
+    }
+]
