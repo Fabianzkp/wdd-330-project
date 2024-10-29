@@ -1,9 +1,6 @@
-// Wait until the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     fetchBusinessData();
-    document.getElementById('mapViewBtn').addEventListener('click', () => {
-        alert('Map View functionality coming soon!');
-    });
+    fetchWeatherData(); // Automatically fetch weather data on page load
 });
 
 // Fetch and display business data from JSON file
@@ -42,18 +39,49 @@ function displayBusinesses(businesses) {
     });
 }
 
-function filterBusinesses() {
-    const searchTerm = document.getElementById('search').value.toLowerCase();
-    const businessCards = document.querySelectorAll('.business-card');
+// Fetch weather data and display it
+function fetchWeatherData() {
+    const weatherApiKey = '19986686d43ac7cac75b81de240e71b0';
+    const ipinfoToken = '14e9427bfcf742'; // Replace with your actual IPinfo token
 
-    businessCards.forEach(card => {
-        const businessName = card.querySelector('h3').innerText.toLowerCase();
-        const businessCategory = card.dataset.category.toLowerCase(); // Assuming you set a data attribute for category
+    // Fetch user location based on IP
+    fetch(`https://ipinfo.io?token=${ipinfoToken}`)
+        .then(response => response.json())
+        .then(data => {
+            const [lat, lon] = data.loc.split(','); // Get lat and lon from loc string
+            fetchWeather(lat, lon); // Fetch weather for the user's location
+        })
+        .catch(error => {
+            console.error("Error fetching IP information:", error);
+            // Fallback to predefined coordinates if IP fetch fails
+            fetchWeather(4.975394198277854, 8.339750278691453); // Default coordinates
+        });
+}
 
-        if (businessName.includes(searchTerm) || businessCategory.includes(searchTerm)) {
-            card.style.display = '';
-        } else {
-            card.style.display = 'none';
-        }
-    });
+// Function to fetch and display weather data
+function fetchWeather(lat, lon) {
+    const weatherApiKey = '19986686d43ac7cac75b81de240e71b0';
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=metric`;
+
+    fetch(weatherUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Display the weather information
+            const weatherInfo = `
+                <h2>Weather in ${data.name}, ${data.sys.country}</h2>
+                <p>Temperature: ${data.main.temp}°C</p>
+                <p>Weather: ${data.weather[0].description}</p>
+                <p>Humidity: ${data.main.humidity}%</p>
+                <p>Wind Speed: ${data.wind.speed} m/s</p>
+            `;
+            document.getElementById("weatherInfo").innerHTML = weatherInfo; // Update the weather info div
+        })
+        .catch(error => {
+            console.error("There was a problem with the fetch operation:", error);
+        });
 }
