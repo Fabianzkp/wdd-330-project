@@ -229,6 +229,11 @@ footer {
         /* Reduce padding on smaller screens */
     }
 
+    .business-cards-container {
+        grid-template-columns: 1fr;
+        /* One column */
+    }
+
     #map {
         height: 250px;
         /* Adjust map height for smaller screens */
